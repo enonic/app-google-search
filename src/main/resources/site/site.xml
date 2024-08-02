@@ -1,0 +1,23 @@
+<!-- Delete this file if you are building a web app -->
+<site>
+  <form>
+    <input name="iconContent" type="ImageSelector">
+      <label>Select search button icon</label>
+      <help-text>Default icon is used if you don't select any</help-text>
+      <occurrences maximum="1" minimum="0"/>
+    </input>
+    <input name="cssAnimation" type="Checkbox">
+      <label>Animate icon</label>
+      <help-text>Add pulse animation to the icon</help-text>
+      <occurrences maximum="1" minimum="0"/>
+      <default>checked</default>
+    </input>
+    <input name="iconTooltip" type="TextLine">
+      <label>Icon tooltip</label>
+      <occurrences maximum="1" minimum="0"/>
+    </input>
+  </form>
+  <processors>
+    <response-processor name="add-script" order="10"/>
+  </processors>
+</site>

@@ -1,0 +1,52 @@
+<link rel="stylesheet" data-th-href="${styleSrc}" type="text/css" media="all"/>
+
+<!-- Widget JavaScript bundle -->
+<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
+
+
+<!-- Search widget element is not visible by default -->
+<gen-search-widget style="font-size: 16px;"
+                   data-th-configId="${configID}"
+                   data-th-triggerId="${triggerID}">
+</gen-search-widget>
+
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const tokenServiceUrl = /*[[${tokenServiceUrl}]]*/ undefined;
+    const triggerId = /*[[${triggerID}]]*/ undefined;
+
+    /*]]>*/
+
+    function renewToken() {
+        fetch(tokenServiceUrl)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.error('Failed to get google token, make sure you have correct application configuration.');
+                }
+            })
+            .then(data => {
+                if (!data) {
+                    return;
+                }
+                const triggerEl = document.querySelector(`#${triggerId}`);
+                const widget = document.querySelector('gen-search-widget');
+                if (data.token) {
+                    widget.authToken = data.token;
+                    triggerEl.classList.add('active');
+                } else {
+                    widget.authToken = null;
+                    triggerEl.classList.remove('active');
+                }
+                if (data.expires) {
+                    setTimeout(renewToken, data.expires - Date.now());
+                }
+            });
+    }
+
+    if (tokenServiceUrl) {
+        renewToken();
+    }
+</script>

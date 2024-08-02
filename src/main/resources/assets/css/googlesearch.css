@@ -1,0 +1,51 @@
+.grecaptcha-badge {
+    display: none;
+}
+
+.custom-recaptcha3-terms {
+    font-size: 12px;
+}
+
+.__googlesearch-trigger {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+
+gen-search-widget {
+    --md-sys-typescale-label-large-size: 15px;
+}
+
+.__googlesearch-trigger img {
+    pointer-events: none;
+    transition: 300ms ease-in-out;
+}
+
+.__googlesearch-trigger.active {
+    display: block;
+}
+
+.__googlesearch-trigger.active:hover img {
+    animation: none !important;
+    transform: scale(1.1);
+}
+
+.__googlesearch-trigger.active.animated img {
+    animation: pulsate-anim 4s ease-in-out infinite both;
+}
+
+
+@keyframes pulsate-anim {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
