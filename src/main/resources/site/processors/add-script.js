@@ -34,6 +34,8 @@ exports.responseProcessor = function (req, res) {
             imgSrc: getImageUrl(siteConfig),
             animation: siteConfig["cssAnimation"] !== false,
             tooltip: siteConfig["iconTooltip"],
+            scale: siteConfig["iconScale"] || 'small',
+            text: siteConfig["iconText"],
             triggerID: params.triggerID
         };
         const triggerHtml = libs.thymeleaf.render(triggerView, triggerParams);

@@ -8,8 +8,8 @@
 
 .__googlesearch-trigger {
     position: fixed;
-    right: 10px;
-    bottom: 10px;
+    right: 25px;
+    bottom: 20px;
     cursor: pointer;
     z-index: 1001;
     display: none;
@@ -24,6 +24,15 @@ gen-search-widget {
     transition: 300ms ease-in-out;
 }
 
+.__googlesearch-trigger span {
+    color: black;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, -1px 1px 0 white, 1px -1px 0 white;
+    font-size: 18px;
+    margin-top: 7px;
+    display: block;
+    text-align: center;
+}
+
 .__googlesearch-trigger.active {
     display: block;
 }
@@ -35,6 +44,18 @@ gen-search-widget {
 
 .__googlesearch-trigger.active.animated img {
     animation: pulsate-anim 4s ease-in-out infinite both;
+}
+
+.__googlesearch-trigger.small img {
+    height: 80px;
+}
+
+.__googlesearch-trigger.medium img {
+    height: 120px;
+}
+
+.__googlesearch-trigger.large img {
+    height: 160px;
 }
 
 
