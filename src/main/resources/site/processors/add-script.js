@@ -59,7 +59,7 @@ function getImageUrl(siteConfig) {
         imageUrl = libs.portal.attachmentUrl({id: imageContent, download: false});
     }
     if (!imageUrl) {
-        imageUrl = libs.portal.assetUrl({path: "/img/juke.svg"})
+        imageUrl = libs.portal.assetUrl({path: "/img/stars.svg"})
     }
     return imageUrl;
 }
