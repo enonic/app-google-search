@@ -14,7 +14,7 @@ dependencies {
     include xplibs.context
     include xplibs.admin
 
-    include "com.enonic.lib:lib-asset:2.0.0"
+    include "com.enonic.lib:lib-asset:2.0.1"
 
     include libs.lib.thymeleaf
 
