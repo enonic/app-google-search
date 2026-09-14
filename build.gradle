@@ -18,7 +18,7 @@ dependencies {
 
     include libs.lib.thymeleaf
 
-    include 'com.google.auth:google-auth-library-oauth2-http:1.48.0'
+    include 'com.google.auth:google-auth-library-oauth2-http:1.52.0'
 }
 
 repositories {
